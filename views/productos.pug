@@ -1,0 +1,23 @@
+extends layout 
+
+block content 
+    h3(style="align:center;") Vista de Productos
+    article
+        table
+            thead 
+                tr 
+                    th Nombre
+                    th Precio
+                    th Imagen
+                      tbody
+                          if !isEmpty
+                              tr 
+                                  td(colspan="3") No hay productos registrados aun
+                          each item in productos
+                              tr
+                                  td=item.nombre
+                                  td=item.precio
+                                  td
+                                              if item.url
+                                                  img(class="img-fluid" src=item.url alt=item.nombre)
+    a(href=baseURL) Volver    

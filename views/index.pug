@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h3= title
+  div.text-center
+  article
+    h3 Ingrese Producto
+    form(action="/productos", method="post") 
+      div(class='grid')
+        label(for="lblnombre") Nombre        
+        label(for="lblprecio") Precio
+      div(class='grid')
+        input(type="text", name="nombre", placeholder="ingrese nombre..", required)
+        input(type="text", name="precio", placeholder="ingrese precio..", required)
+      label(for="lblurl") Foto Url
+      input(type="text", name="url", placeholder="ingrese url imagen..", required)
+      input(type="submit", value="Enviar")
